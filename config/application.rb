@@ -29,5 +29,9 @@ module WorkoutList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
   end
 end
+

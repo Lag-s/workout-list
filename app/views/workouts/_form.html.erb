@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+    <%= form_with(model: @workout, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+  
+      <div class="form-group">
+        <%= f.label :date, '日付' %>
+        <%= f.date_field :date, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :event, 'タイプ' %>
+        <%= f.text_field :event, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :totaltime, '時間' %>
+        <%= f.time_select :totaltime, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :totaldistance, '距離' %>
+        <%= f.number_field :totaldistance, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content, '備考' %>
+        <%= f.text_field :content, class: 'form-control' %>
+      </div>
+
+      <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

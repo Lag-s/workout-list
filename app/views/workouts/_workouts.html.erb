@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+  <% workouts.each do |workout| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(workout.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to workout.user.name, user_path(workout.user) %> <span class="text-muted">posted at <%= l workout.created_at, format: :long %></span>
+        </div>
+        <div class="row">
+          <div class="col-sm-2"><%= link_to workout.date, workout %></div>
+          <div class="col-sm-2"><%= workout.event %></div>
+        </div>
+        <%= link_to "削除", workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger btn-sm" %>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate workouts %>
+</ul>

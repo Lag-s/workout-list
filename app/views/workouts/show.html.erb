@@ -1,0 +1,27 @@
+<h1>id: <%= @workout.id %> の詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>日付</th>
+    <td><%= @workout.date %></td>
+  </tr>
+  <tr>
+    <th>タイプ</th>
+    <td><%= @workout.event %></td>
+  </tr>
+  <tr>
+    <th>時間</th>
+    <td><%= l @workout.totaltime, format: :short %></td>
+  </tr>
+  <tr>
+    <th>距離</th>
+    <td><%= @workout.totaldistance %>km</td>
+  </tr>
+  <tr>
+    <th>備考</th>
+    <td><%= @workout.content %></td>
+  </tr>
+</table>
+
+<%= link_to "このメッセージを編集する", edit_workout_path(@workout), class: "btn btn-light" %>
+<%= link_to "このメッセージを削除する", @workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger" %>

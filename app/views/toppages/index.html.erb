@@ -1,5 +1,9 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div class="row">
+    <div class="col-sm-8">
+      <%= render 'workouts/workouts', workouts: @workouts %>
+    </div>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
