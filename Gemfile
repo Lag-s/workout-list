@@ -56,4 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kaminari'
 
-gem 'rails-i18n', '~> 5.1' 
+gem 'i18n_generators' 

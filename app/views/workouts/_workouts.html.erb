@@ -7,10 +7,11 @@
           <%= link_to workout.user.name, user_path(workout.user) %> <span class="text-muted">posted at <%= l workout.created_at, format: :long %></span>
         </div>
         <div class="row">
-          <div class="col-sm-2"><%= link_to workout.date, workout %></div>
-          <div class="col-sm-2"><%= workout.event %></div>
+          <div class="col-2"><%= l workout.date %></div>
+          <div class="col-2"><%= workout.event %></div>
+          <%= link_to "詳細", workout, class: "btn btn-light btn-sm" %>
+          <%= link_to "削除", workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger btn-sm" %>
         </div>
-        <%= link_to "削除", workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger btn-sm" %>
       </div>
     </li>
   <% end %>

@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー  #g
+      workout: いい結果になる  #g
+
+    attributes:
+      user:
+        email: Eメール  #g
+        name: 名前  #g
+        password_digest: パスワードダイジェスト  #g
+        workouts: トレーニング  #g
+
+      workout:
+        content: コンテンツ  #g
+        date: 日付  #g
+        event: イベント  #g
+        totaldistance: 総距離  #g
+        totaltime: 合計時間  #g
+        user: :activerecord.models.user  #g
