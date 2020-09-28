@@ -1,4 +1,6 @@
-<h1>id: <%= @workout.id %> の詳細ページ</h1>
+<div class="text-center">
+<h1>id: <%= @workout.id %> ワークアウト詳細</h1>
+</div>
 
 <table class="table table-bordered">
   <tr>
@@ -23,5 +25,9 @@
   </tr>
 </table>
 
-<%= link_to "このメッセージを編集する", edit_workout_path(@workout), class: "btn btn-light" %>
-<%= link_to "このメッセージを削除する", @workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger" %>
+<div class="text-center">
+<% if current_user == @workout.user %>
+  <%= link_to "編集", edit_workout_path(@workout), class: "btn btn-light" %>
+  <%= link_to "削除", @workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger" %>
+<% end %>
+</div>

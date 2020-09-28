@@ -10,7 +10,10 @@
           <div class="col-2"><%= l workout.date %></div>
           <div class="col-2"><%= workout.event %></div>
           <%= link_to "詳細", workout, class: "btn btn-light btn-sm" %>
-          <%= link_to "削除", workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger btn-sm" %>
+          <%= render "favorites/favorite_button", workout: workout %>
+          <% if current_user == workout.user %>
+            <%= link_to "削除", workout, method: :delete, data: { confirm: "本当に削除してよろしいですか?" }, class: "btn btn-danger btn-sm" %>
+          <% end %>
         </div>
       </div>
     </li>
