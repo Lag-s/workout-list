@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: workout-list_production
   username: workout-list
   password: <%= ENV['WORKOUT-LIST_DATABASE_PASSWORD'] %>
