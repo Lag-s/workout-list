@@ -1,5 +1,6 @@
 class WorkoutsController < ApplicationController
-before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :require_user_logged_in
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def show
   end
