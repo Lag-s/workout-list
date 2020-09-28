@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :set_message, only: [:show]
 
   def show
   end
@@ -29,7 +29,7 @@ class WorkoutsController < ApplicationController
     if current_user == @workout.user
       render "edit"
     else
-      redirect_to current_user
+      redirect_to root_url
     end
   end
 
