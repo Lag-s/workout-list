@@ -3,7 +3,7 @@ class Workout < ApplicationRecord
 
   validates :date, presence: true
   validates :event, presence: true, length: { maximum: 255 }
-  validates :totaldistance, presence: true
+  validates :totaldistance, presence: true, numericality: { greater_than: 0 }
   validates :totaltime, presence: true
   validates :content, length: { maximum: 255 }
 
