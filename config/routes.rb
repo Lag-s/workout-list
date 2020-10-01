@@ -15,8 +15,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get "post", to: "workouts#new"
-  resources :workouts, only:[:show, :new, :create, :edit, :update, :destroy]
+  resources :workouts, only:[:show, :new, :create, :edit, :update, :destroy] do
+    member do
+      get :calendars
+    end
+  end
   resources :relationships, only:[:create, :destroy]
   resources :favorites, only:[:create, :destroy]
 end

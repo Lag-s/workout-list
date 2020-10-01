@@ -50,6 +50,10 @@ class WorkoutsController < ApplicationController
     redirect_to current_user
   end
 
+  def calendars
+    @workouts = current_user.workouts
+  end
+
   private
 
   def set_message

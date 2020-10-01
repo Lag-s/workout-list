@@ -46,5 +46,4 @@ class User < ApplicationRecord
   def favorite?(workout)
     self.favposts.include?(workout)
   end
-
 end

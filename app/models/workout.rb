@@ -9,4 +9,8 @@ class Workout < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :favorites_users, through: :favorites, source: :user
+
+  def start_time
+    self.date
+  end
 end

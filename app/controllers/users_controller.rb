@@ -45,6 +45,10 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
+  def calendars
+    @workouts = current_user.workouts.all
+  end
+
   private
 
   def user_params
