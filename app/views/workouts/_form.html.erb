@@ -21,7 +21,7 @@
 
       <div class="form-group">
         <%= f.label :totaldistance, '距離' %>
-        <%= f.number_field :totaldistance, class: 'form-control' %>
+        <%= f.number_field :totaldistance, step: "0.1", class: 'form-control', min: 0 %>
       </div>
 
       <div class="form-group">

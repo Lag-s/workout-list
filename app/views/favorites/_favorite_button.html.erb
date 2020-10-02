@@ -1,11 +1,11 @@
 <% if current_user.favorite?(workout) %>
-   <%= form_with(model: current_user.favorites.find_by(workout_id: workout.id), local: true, method: :delete) do |f| %>
-     <%= hidden_field_tag :workout_id, workout.id %>
+  <%= form_with(model: current_user.favorites.find_by(workout_id: workout.id), local: true, method: :delete) do |f| %>
+    <%= hidden_field_tag :workout_id, workout.id , id: "workout_id_#{workout.id}"  %>
     <%= f.submit 'お気に入り解除', class: 'btn btn-warning btn-sm' %>
   <% end %>
 <% else %>
   <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
-    <%= hidden_field_tag :workout_id, workout.id %>
+    <%= hidden_field_tag :workout_id, workout.id , id: "workout_id_#{workout.id}"  %>
     <%= f.submit 'お気に入り', class: 'btn btn-primary btn-sm' %>
   <% end %>
 <% end %>

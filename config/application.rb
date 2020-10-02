@@ -32,6 +32,7 @@ module WorkoutList
 
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
+    config.beginning_of_week = :sunday
   end
 end
 
